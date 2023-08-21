@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.10)
+option(GTEST_ENABLED "gtesting is enabled" OFF)
+project(gtest-docker)
+if (GTEST_ENABLED)
+find_package(GTest REQUIRED)
+
+add_executable(gtesting  tests/gtest.cpp)
+target_include_directories(gtesting PUBLIC src)
+target_link_libraries(gtesting PRIVATE GTest::GTest GTest::Main)
+target_compile_features(gtesting PRIVATE cxx_std_11)
+target_compile_definitions(gtesting PUBLIC -DGTEST_ENABLED)
+else()
+add_executable(normal-build  src/main.cpp)
+endif()
+
