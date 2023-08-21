@@ -4,4 +4,4 @@ i used macros inside my test and main file to remove the conflict of multiple ma
 when Gtest_enabled it will compile both main and test but will generate only one executable which is of gtest.
 if you want to build this using cmake only - cd gtest-docker -> mkdir build -> cd build -> cmake -DGTEST_ENABLED=ON or OFF ..
 when build then just run make in build directory .
-ls and you will see according to the flag provided you will see corresponding executable.
+According to the flag provided you will see corresponding executable.
